@@ -1,9 +1,8 @@
 function swap(a, b) {
-    first_value = a; 
-    second_value = b; 
+    c = a;
 
-    a = second_value; 
-    b = first_value; 
+    a = b;
+    b = c;
     
     return [a, b];
 }
