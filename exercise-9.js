@@ -9,7 +9,7 @@ function average(geometry, algebra, physics) {
         }
         return true;
     }
-
+    
     if (!is_grade(g) || !is_grade(a) || !is_grade(p)) {
         return undefined;
     }
