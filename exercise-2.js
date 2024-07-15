@@ -1,9 +1,16 @@
 function average(geometry, algebra, physics) {
     let g = geometry; 
     let a = algebra;
-    let p = physics; 
+    let p = physics;
 
-    if ((g < 0 || g > 10) || (a < 0 || a > 10) || (p < 0 || p > 10)) {
+    function is_grade(num) {
+        if (num < 0 || num > 10) {
+            return false;
+        }
+        return true;
+    }
+
+    if (!is_grade(g) || !is_grade(a) || !is_grade(p)) {
         return undefined;
     }
 
