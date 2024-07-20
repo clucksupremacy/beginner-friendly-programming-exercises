@@ -26,7 +26,7 @@ function crypto_calculator(money, bitcoin_price, ethereum_price, litecoin_price)
  
     if (litecoin_price < 0) {
         litecoin_max = undefined;
-    } if (litecoin_price == 0) {
+    } else if (litecoin_price == 0) {
         litecoin_max = 0;
     } else {
         litecoin_max = Math.floor(money / litecoin_price);
