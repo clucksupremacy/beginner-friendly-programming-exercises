@@ -4,9 +4,7 @@ function crypto_calculator(money, bitcoin_price, ethereum_price, litecoin_price)
         return [0, 0, 0];
     }
 
-    let bitcoin_max = 0;
-    let ethereum_max = 0;
-    let litecoin_max = 0;
+    let bitcoin_max, ethereum_max, litecoin_max = 0;
 
     function coin_max(price, max) {
         if (price < 0) {
