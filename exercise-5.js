@@ -4,22 +4,20 @@ function crypto_calculator(money, bitcoin_price, ethereum_price, litecoin_price)
         return [0, 0, 0];
     }
 
-    let bitcoin_max, ethereum_max, litecoin_max = 0;
-
-    function coin_max(price, max) {
+    function coin_max(price) {
         if (price < 0) {
-            max = undefined;
+            return undefined;
         } else if (price == 0) {
-            max = 0;
+            return 0; 
         } else {
-            max = Math.floor(money / price);
+            return Math.floor(money / price);
         }
-        return max; // returns the value but doesn't store it in a variable. Make sure to do that yourself
+        // returns the value but doesn't store it in a variable. Make sure to do that yourself
     }
 
-    bitcoin_max = coin_max(bitcoin_price, bitcoin_max);
-    ethereum_max = coin_max(ethereum_price, ethereum_max);
-    litecoin_max = coin_max(litecoin_price, litecoin_max);
+    let bitcoin_max = coin_max(bitcoin_price);
+    let ethereum_max = coin_max(ethereum_price);
+    let litecoin_max = coin_max(litecoin_price);
 
     console.log("With ", money, "$ you can buy: ", bitcoin_max, " Bitcoins, ", ethereum_max, " Ethereum, and ", litecoin_max, " Litecoins");
 
