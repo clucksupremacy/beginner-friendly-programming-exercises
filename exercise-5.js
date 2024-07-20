@@ -10,32 +10,26 @@ function crypto_calculator(money, bitcoin_price, ethereum_price, litecoin_price)
 
     if (bitcoin_price < 0) {
         bitcoin_max = undefined;
+    } else if (bitcoin_price == 0) {
+        bitcoin_max = 0;
     } else {
         bitcoin_max = Math.floor(money / bitcoin_price);
     }
  
     if (ethereum_price < 0) {
         ethereum_max = undefined;
+    } else if (ethereum_price == 0) {
+        ethereum_max = 0;
     } else {
         ethereum_max = Math.floor(money / ethereum_price);
     }
  
     if (litecoin_price < 0) {
         litecoin_max = undefined;
+    } if (litecoin_price == 0) {
+        litecoin_max = 0;
     } else {
         litecoin_max = Math.floor(money / litecoin_price);
-    }
-
-    if (bitcoin_price == 0) {
-        bitcoin_max = 0;
-    }
-
-    if (ethereum_price == 0) {
-        ethereum_max = 0;
-    }
-
-    if (litecoin_price == 0) {
-        litecoin_max = 0;
     }
 
     console.log("With ", money, "$ you can buy: ", bitcoin_max, " Bitcoins, ", ethereum_max, " Ethereum, and ", litecoin_max, " Litecoins");
