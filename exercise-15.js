@@ -12,7 +12,10 @@ function phone_bill(seconds) {
     }
 
     let total_amount = amount + 25;
+
+    console.log("total amount: ", total_amount, "$");
+
     return total_amount;
 }
 
-// console.log(phone_bill(801));
+// phone_bill(801);
