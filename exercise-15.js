@@ -3,7 +3,7 @@ function phone_bill(seconds) {
 
     if (seconds < 1) {
         amount = 0;
-    } else if ((seconds >= 1) && (seconds < 501)) {
+    } else if (seconds < 501) {
         amount = seconds * 0.01;
     } else if (seconds < 801) {
         amount = 5 + ((seconds - 500) * 0.008);     // amount = (500 * 0.01) + ((seconds - 500) * 0.008); 
@@ -18,4 +18,4 @@ function phone_bill(seconds) {
     return total_amount;
 }
 
-// phone_bill(501);
+phone_bill(500);
