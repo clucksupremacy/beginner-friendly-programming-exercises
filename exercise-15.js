@@ -1,11 +1,13 @@
 function phone_bill(seconds) {
-    let amount = 0;
+    let amount;
 
-    if ((seconds >= 1) && (seconds < 501)) {
+    if (seconds < 1) {
+        amount = 0;
+    } else if ((seconds >= 1) && (seconds < 501)) {
         amount = seconds * 0.01;
-    } else if ((seconds > 500) && (seconds < 801)) {
+    } else if (seconds < 801) {
         amount = 5 + ((seconds - 500) * 0.008);     // amount = (500 * 0.01) + ((seconds - 500) * 0.008); 
-    } else if (seconds > 800) {
+    } else {
         amount = 7.4 + ((seconds - 800) * 0.005);   // amount = (500 * 0.01) + (300 * 0.008) + ((seconds - 800) * 0.005);
     }
 
@@ -16,4 +18,4 @@ function phone_bill(seconds) {
     return total_amount;
 }
 
-phone_bill(801);
+phone_bill(501);
