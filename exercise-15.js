@@ -18,4 +18,4 @@ function phone_bill(seconds) {
     return total_amount;
 }
 
-phone_bill(501);
+// phone_bill(501);
