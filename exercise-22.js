@@ -1,17 +1,20 @@
-function sign_5(a, b, c, d, e) {    //hard-coded version
-    function sign(num) {
-        if (Math.sign(num) == -1) {
-            return "Negative";
-        } else if (Math.sign(num) == 0) {
-            return "0";
-        } else if (Math.sign(num) == 1) {
-            return "Positive";
-        }
-    }
-    
-    let message = [sign(a), sign(b), sign(c), sign(d), sign(e)];
+function sign_arr(arr) {
+    let arr_message = [];
 
-    return message;
+    for (let i = 0; i < arr.length; i++) {
+        function sign(arr) {
+            if (Math.sign(arr[i]) == -1) {
+                return "Negative";
+            } else if (Math.sign(arr[i]) == 0) {
+                return "0";
+            } else if (Math.sign(arr[i]) == 1) {
+                return "Positive";
+            }
+        }
+        arr_message.push(sign(arr));
+    }
+
+    return arr_message;
 }
 
-// console.log(sign_5(4, 6, -11, -4, 9));
+console.log(sign_arr([4, 6, -11, -4, 9]));
