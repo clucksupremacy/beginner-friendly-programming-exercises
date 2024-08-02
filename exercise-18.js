@@ -8,4 +8,4 @@ function addition_odd() {
     return sum; 
 }
 
-// console.log(addition_odd());
+console.log("The sum is", addition_odd());
