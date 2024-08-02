@@ -1,4 +1,4 @@
-function average_5(arr) {
+function average_arr(arr) {
     let sum = 0;
 
     for (let i = 0; i < arr.length; i++) {
@@ -6,7 +6,7 @@ function average_5(arr) {
     }
 
     let average = sum / arr.length;
-    
+
     return average;
 }
 
