@@ -4,8 +4,8 @@ function addition() {
     for (let i = 1; i < 100; i++) {
         sum += i;
     }
-    
+
     return sum;
 }
 
-console.log(addition());
+console.log("The sum is", addition());
