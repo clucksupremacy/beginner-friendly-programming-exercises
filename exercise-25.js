@@ -22,6 +22,12 @@ function coinflip_percentage() {
         }
     }
     coinflip_loop();
+
+    let head_percentage = head_count / (tails_count + head_count) * 100;
+    let tails_percentage = tails_count / (tails_count + head_count) * 100;
+    
+    console.log("Head won", head_count, "times and tails won", tails_count, "times");
+    console.log(head_percentage, "% Head, ", tails_percentage, "% Tails");
 }
 coinflip_percentage();
 
