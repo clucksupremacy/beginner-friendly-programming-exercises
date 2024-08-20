@@ -4,7 +4,7 @@ function coinflip_percentage() {
 
     function coinflip_loop() {
         const prompt = require("prompt-sync")({ sigint: true });
-        input = prompt("Enter 'head' or 'tails', or 'stop' to stop: ");
+        input = prompt('Enter "head" or "tails", or "stop" to stop: ');
         const stop = input === "stop";
         if (stop) {
             console.log("head:", head_count, "tails:", tails_count);
