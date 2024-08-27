@@ -2,7 +2,6 @@ let average_rent = 0;
     let apts_registered = [];
     let number_input = 0;
     let sum = 0;
-
 function collect_apt_prices() {
     do {
         const prompt = require("prompt-sync")({ sigint: true });
@@ -11,12 +10,12 @@ function collect_apt_prices() {
         if (input <= 0) {
             console.log("Exiting");
             return apts_registered;
-        } else if (isNaN(input) === false) {
+        } else if (!isNaN(input)) {
             number_input = Number(input);
             apts_registered.push(number_input);
         }
     }
-    while (input > 0 || isNaN(input) === true);
+    while (input > 0 || isNaN(input));
 }
 
 function calculate_avg_price() {
@@ -48,7 +47,7 @@ function compare_prices() {
             console.log("Above average price");
         }
     }
-    while (input > 0 || isNaN(input) === true);
+    while (input > 0 || isNaN(input));
 }
 
 function rent_prices() {
