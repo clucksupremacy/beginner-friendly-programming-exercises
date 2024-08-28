@@ -1,8 +1,7 @@
-let average_rent = 0;
-    let apts_registered = [];
-    let number_input = 0;
-    let sum = 0;
 function collect_apt_prices() {
+    let number_input = 0;
+    let apts_registered = [];
+
     do {
         const prompt = require("prompt-sync")({ sigint: true });
         input = prompt('Enter apartment price to add to register. Press 0 or enter a negative value to exit: ');
@@ -18,7 +17,10 @@ function collect_apt_prices() {
     while (input > 0 || isNaN(input));
 }
 
-function calculate_avg_price() {
+function calculate_avg_price(apts_registered) {
+    let average_rent = 0;
+    let sum = 0;
+
     for (let i = 0; i < apts_registered.length; i++) {
         sum += apts_registered[i];
     }
