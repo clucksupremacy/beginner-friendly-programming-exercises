@@ -1,9 +1,7 @@
-let average_rent = 0;
-let apts_registered = [];
-let number_input = 0;
-let sum = 0;
-
 function collect_apt_prices() {
+    let apts_registered = [];
+    let number_input = 0;
+
     do {
         const prompt = require("prompt-sync")({ sigint: true });
         input = prompt('Enter apartment price to add to register. Press 0 or enter a negative value to exit: ');
@@ -20,6 +18,9 @@ function collect_apt_prices() {
 }
 
 function calculate_avg_price() {
+    let average_rent = 0;
+    let sum = 0;
+
     for (let i = 0; i < apts_registered.length; i++) {
         sum += apts_registered[i];
     }
@@ -52,7 +53,7 @@ function compare_prices() {
 }
 
 function rent_prices() {
-    collect_apt_prices();
-    calculate_avg_price();
-    compare_prices();
+    apts_registered = collect_apt_prices();
+    average_rent = calculate_avg_price(apts_registered);
+    compare_prices(average_rent);
 } rent_prices();
