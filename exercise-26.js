@@ -1,9 +1,10 @@
+const prompt = require("prompt-sync")({ sigint: true });
+
 function collect_apt_prices() {
     let apts_registered = [];
     let number_input = 0;
 
     do {
-        const prompt = require("prompt-sync")({ sigint: true });
         input = prompt('Enter apartment price to add to register. Press 0 or enter a negative value to exit: ');
 
         if (input <= 0) {
@@ -17,7 +18,7 @@ function collect_apt_prices() {
     while (input > 0 || isNaN(input));
 }
 
-function calculate_avg_price() {
+function calculate_avg_price(apts_registered) {
     let average_rent = 0;
     let sum = 0;
 
@@ -34,9 +35,8 @@ function calculate_avg_price() {
     return average_rent;
 } 
 
-function compare_prices() {
+function compare_prices(average_rent) {
     do {
-        const prompt = require("prompt-sync")({ sigint: true });
         input = prompt('Enter apartment price to compare with average rent price. Press 0 or enter a negative value to exit: ');
 
         if (input <= 0) {
@@ -53,7 +53,7 @@ function compare_prices() {
 }
 
 function rent_prices() {
-    apts_registered = collect_apt_prices();
-    average_rent = calculate_avg_price(apts_registered);
-    compare_prices(average_rent);
+    let apts = collect_apt_prices();
+    let average = calculate_avg_price(apts);
+    compare_prices(average);
 } rent_prices();
