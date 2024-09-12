@@ -1,33 +1,24 @@
-// instructions unclear. Doing it my way.
 const prompt = require("prompt-sync")({ sigint: true });
 
-function start() {
-    let input = 0;
-    let zero_or_greater = 0;
-
-    do {
-        input = prompt('Enter a non-negative integer to run. Enter a negative integer to exit: ');
-        
-        if (input < 0) {
-            console.log('Countdown begins');
-            return zero_or_greater;
-        } else if (input > -1) {
-            zero_or_greater = input;
-        }
-    }
-    while (input);
-}
-
 function countdown() {
-    let num_start = start();
+    let input = prompt('Enter a non-negative integer value (e.g. 0, 1, 2): ');
 
-    let intervalId = setInterval(() => {
-        if (num_start > 0) {
-            console.log(num_start--);
-        } else if (num_start == 0) {
-            console.log("Go!");
-            clearInterval(intervalId);
-        }
-      }, 1000);
+    if (input < 0 || input % 1 != 0 || isNaN(input) === true) {
+        console.log("Exit Program");
+        return input;
+    } else {
+        console.log("Counting down");
+        let intervalId = setInterval(() => {
+            if (input < 0 || input % 1 != 0 || isNaN(input) === true) {
+                console.log("Exit Program");
+                clearInterval(intervalId);
+            } else if (input == 0) {
+                console.log("Go!");
+                clearInterval(intervalId);
+            } else {
+                console.log(input--);
+            }
+        }, 1000);
+    }
 }
 countdown();
