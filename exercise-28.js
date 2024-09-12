@@ -9,10 +9,7 @@ function countdown() {
     } else {
         console.log("Counting down");
         let intervalId = setInterval(() => {
-            if (input < 0 || input % 1 != 0 || isNaN(input) === true) {
-                console.log("Exit Program");
-                clearInterval(intervalId);
-            } else if (input == 0) {
+            if (input == 0) {
                 console.log("Go!");
                 clearInterval(intervalId);
             } else {
